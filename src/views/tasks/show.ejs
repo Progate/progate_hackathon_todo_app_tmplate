@@ -1,0 +1,27 @@
+<h2>Task Details</h2>
+<div class="menu">
+  <a href="/tasks/<%= task.id %>/edit" class="button">Edit</a>
+  <form action="/tasks/<%= task.id %>?_method=delete" method="post">
+    <button type="submit" class="button" data-test="delete-button">
+      Delete
+    </button>
+  </form>
+</div>
+<table class="task">
+  <tr>
+    <td>Title</td>
+    <td data-test="task-title"><%= task.title %></td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td data-test="task-description"><%= task.description %></td>
+  </tr>
+  <tr>
+    <td>Due date</td>
+    <td data-test="task-due-date"><%= task.dueDate %></td>
+  </tr>
+  <tr>
+    <td>Done</td>
+    <td data-test="task-done"><%= task.isDone %></td>
+  </tr>
+</table>

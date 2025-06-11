@@ -1,0 +1,27 @@
+<div class="menu">
+  <a href="/tasks/new" class="button">New task</a>
+</div>
+<table class="task-list">
+  <tr>
+    <th>Title</th>
+    <th>Status</th>
+    <th>Due date</th>
+    <th>Priority</th>
+  </tr>
+  <% tasks.forEach(task => { %>
+    <tr data-test="task-item-<%= task.id %>">
+      <td class="task-title" data-test="task-title">
+        <a href="/tasks/<%= task.id %>"><%= task.title %></a>
+      </td>
+      <td data-test="task-status">
+        <%= task.status %>
+      </td>
+      <td data-test="task-due-date">
+        <%= task.dueDate %>
+      </td>
+      <td data-test="task-priority">
+        <%= task.priority %>
+      </td>
+    </tr>
+  <% }) %>
+</table>

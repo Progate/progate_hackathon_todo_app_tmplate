@@ -1,0 +1,114 @@
+body {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.error {
+  border: 1px solid red;
+  padding: 10px;
+  color: red;
+}
+
+.container {
+  max-width: 768px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+header {
+  font-size: 40px;
+  padding: 20px 0;
+}
+
+.menu {
+  display: flex;
+  justify-content: end;
+  column-gap: 10px;
+}
+
+.button {
+  padding: 10px 20px;
+  margin: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: blueviolet;
+  color: white;
+}
+
+.task-list {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.task-list th {
+  background-color: #ececec;
+  text-align: center;
+  padding: 10px;
+}
+
+.task-list td {
+  text-align: center;
+  padding: 15px;
+}
+
+.task {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.task tr {
+  border-bottom: 1px solid #ececec;
+}
+
+.task td {
+  padding: 15px;
+}
+
+.form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.form-group {
+  display: flex;
+}
+
+.form-group label {
+  width: 128px;
+  font-weight: bold;
+}
+
+.form-group input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border-radius: 20%;
+  border: 1px solid #ccc;
+}
+
+.form-group input[type="checkbox"]:checked {
+  background-color: blueviolet;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.form-action {
+  display: flex;
+  justify-content: center;
+}
+
+.form-error {
+  border: 1px solid red;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  color: red;
+  list-style: none;
+}

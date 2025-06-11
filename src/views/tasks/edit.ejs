@@ -1,0 +1,31 @@
+<h2>Edit Task</h2>
+<form action="/tasks/<%= task.id %>?_method=patch" method="post" class="form">
+  <% if(typeof errors !== 'undefined' ) { %>
+    <ul class="form-error">
+      <% errors.forEach(error=> { %>
+        <li data-test="error-item">
+          <%= error.msg %>
+        </li>
+        <% }) %>
+    </ul>
+  <% } %>
+  <div class="form-group">
+    <label for="isDone">Done</label>
+    <input type="checkbox" value="true" name="isDone" id="isDone" <%= task.isDone ? "checked" : "" %> data-test="input-is-done" />
+  </div>
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" value="<%= task.title %>" name="title" id="title" data-test="input-title" />
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea cols="10" rows="5" name="description" id="description" data-test="input-description"><%= task.description %></textarea>
+  </div>
+  <div class="form-group">
+    <label for="dueDate">Due Date</label>
+    <input type="text" value="<%= task.dueDate %>" name="dueDate" id="dueDate" data-test="input-due-date" />
+  </div>
+  <div class="form-action">
+    <button type="submit" class="button" data-test="submit-button">Update</button>
+  </div>
+</form>

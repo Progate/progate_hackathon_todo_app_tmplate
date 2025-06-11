@@ -1,0 +1,70 @@
+{
+  "name": "todo_app_express",
+  "license": "SEE LICENSE IN LICENSE",
+  "type": "module",
+  "scripts": {
+    "start": "tsx ./bin/run_server.ts",
+    "start:test": "dotenv -e .env.test -- npm run start",
+    "watch": "tsx watch ./bin/run_server.ts",
+    "db:migrate": "prisma migrate dev",
+    "db:migrate:test": "dotenv -e .env.test -- prisma migrate dev",
+    "db:seed": "prisma db seed",
+    "db:seed:test": "dotenv -e .env.test -- prisma db seed",
+    "db:reset": "prisma migrate reset",
+    "db:reset:test": "dotenv -e .env.test -- prisma migrate reset --force",
+    "test": "npm run db:reset:test && dotenv -e .env.test -- jest -c ./e2e/jest.config.js",
+    "test:index": "npm run test -- index.ts",
+    "test:show": "npm run test -- show.ts",
+    "test:create": "npm run test -- create.ts",
+    "test:update": "npm run test -- update.ts",
+    "test:delete": "npm run test -- delete.ts",
+    "lint:check": "eslint",
+    "lint:fix": "eslint --fix",
+    "format:check": "prettier --check '**/*.{js,ts}'",
+    "format:fix": "prettier --write '**/*.{js,ts}'",
+    "typecheck": "tsc --noEmit --skipLibCheck --project tsconfig.json",
+    "check_puppeteer": "npm run test -- check_puppeteer.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.4.0",
+    "cookie-parser": "^1.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-async-errors": "^3.1.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.0.0",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "prisma": "^6.4.0",
+    "tsx": "^4.19.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "@quramy/jest-prisma": "^1.8.1",
+    "@types/cookie-parser": "^1.4.8",
+    "@types/express": "^5.0.0",
+    "@types/express-ejs-layouts": "^2.5.4",
+    "@types/jest": "^29.5.14",
+    "@types/method-override": "^3.0.0",
+    "@types/morgan": "^1.9.9",
+    "@types/multer": "^1.4.12",
+    "dotenv-cli": "^8.0.0",
+    "eslint": "^9.20.1",
+    "eslint-config-prettier": "^10.0.1",
+    "jest": "^29.7.0",
+    "jest-puppeteer": "^11.0.0",
+    "prettier": "^3.5.1",
+    "puppeteer": "^24.2.1",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.24.1"
+  },
+  "overrides": {
+    "glob": "11.0.1"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  }
+}
